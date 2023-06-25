@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	generater := &str2img.Generator{
+	generator := &str2img.Generator{
 		ImageHeight: 630,
 		ImageWidth:  1200,
 		FontSize:    40.0,
@@ -16,12 +16,12 @@ func main() {
 		ImageBytes:  &bytes.Buffer{},
 	}
 
-	err := generater.Generate("テストてすとです\nほげほげほげ太郎\nほげ太郎")
+	err := generator.Generate("テストてすとです\nほげほげほげ太郎\nほげ太郎")
 	if err != nil {
 		fmt.Printf("%v", err)
 	}
 
-	err = generater.OutputImageFile("test.png")
+	err = generator.OutputImageFile("test.png")
 	if err != nil {
 		fmt.Printf("%v", err)
 	}
