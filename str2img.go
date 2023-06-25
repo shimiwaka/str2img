@@ -14,7 +14,7 @@ import (
 	"golang.org/x/image/math/fixed"
 )
 
-type Generater struct {
+type Generator struct {
 	ImageHeight int
 	ImageWidth  int
 	FontSize    float64
@@ -60,7 +60,7 @@ func textSplitter(dr *font.Drawer, fontSize float64, imageHeight int, imageWidth
 	return newTexts
 }
 
-func (g *Generater) Generate(rawText string) error {
+func (g *Generator) Generate(rawText string) error {
 	ftBinary, err := ioutil.ReadFile(g.FontFile)
 	if err != nil {
 		return err
@@ -117,7 +117,7 @@ func (g *Generater) Generate(rawText string) error {
 	return nil
 }
 
-func (g *Generater) OutputImageFile(fileName string) error {
+func (g *Generator) OutputImageFile(fileName string) error {
 	file, err := os.Create(fileName)
 	if err != nil {
 		return err

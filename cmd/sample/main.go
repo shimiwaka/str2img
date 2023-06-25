@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	generater := &str2img.Generater{
+	generater := &str2img.Generator{
 		ImageHeight: 630,
 		ImageWidth:  1200,
 		FontSize:    40.0,
